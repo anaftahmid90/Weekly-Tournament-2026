@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weekly Tournament 2026</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: white;
+}
+
+header {
+    background: linear-gradient(135deg, #0b1f36, #123d28);
+    padding: 30px 15px;
+    text-align: center;
+    border-bottom: 2px solid #20c978;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #b8d8c7;
+}
+
+nav {
+    display: flex;
+    overflow-x: auto;
+    background: #0d1827;
+    padding: 10px;
+    gap: 8px;
+}
+
+nav button {
+    white-space: nowrap;
+    background: #142438;
+    color: white;
+    border: 1px solid #29425d;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: #20c978;
+    color: #06120d;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.card {
+    background: #101f31;
+    border: 1px solid #223a53;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    color: #20c978;
+}
+
+.hero {
+    text-align: center;
+    padding: 35px 15px;
+    background: linear-gradient(135deg, #102d4a, #123d28);
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.stat {
+    background: #142438;
+    padding: 18px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 25px;
+    color: #20c978;
+    margin-bottom: 5px;
+}
+
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.team {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.score {
+    font-size: 25px;
+    color: #20c978;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 11px 6px;
+    border-bottom: 1px solid #263b52;
+    text-align: center;
+}
+
+th {
+    background: #16304a;
+    color: #20c978;
+}
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    background: #20c978;
+    color: #06120d;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background: #0d1827;
+    color: #91a5b8;
+}
+
+@media (min-width: 700px) {
+    .stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>⚽ WEEKLY TOURNAMENT 2026</h1>
+    <p>Every Match • Every Player • Every Week</p>
+</header>
+
+<nav>
+    <button onclick="showSection('home')">🏠 Home</button>
+    <button onclick="showSection('fixtures')">📅 Fixtures</button>
+    <button onclick="showSection('matches')">⚽ Matches</button>
+    <button onclick="showSection('table')">📊 Table</button>
+    <button onclick="showSection('players')">👤 Players</button>
+    <button onclick="showSection('awards')">🏆 Awards</button>
+    <button onclick="showSection('friendlies')">🤝 Friendlies</button>
+</nav>
+
+<div class="container">
+
+<!-- HOME -->
+<section id="home" class="section active">
+
+    <div class="hero">
+        <h2>Weekly Tournament 2026</h2>
+        <p>Welcome to the official tournament website.</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <strong>13</strong>
+            Players
+        </div>
+
+        <div class="stat">
+            <strong>165</strong>
+            Total Matches
+        </div>
+
+        <div class="stat">
+            <strong>2026</strong>
+            Season
+        </div>
+
+        <div class="stat">
+            <strong>⚽</strong>
+            Football
+        </div>
+    </div>
+
+    <br>
+
+    <div class="card">
+        <h2>⭐ Current Best Player</h2>
+        <div class="player">
+            <strong>Az. Tahmid</strong>
+            <span class="badge">BEST PLAYER</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🧤 Best Goalkeeper</h2>
+        <div class="player">
+            <strong>Az. Rahil</strong>
+            <span class="badge">BEST GK</span>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- FIXTURES -->
+<section id="fixtures" class="section">
+
+    <div class="card">
+        <h2>📅 Upcoming Fixtures</h2>
+
+        <div class="match">
+            <div class="team">Rahil</div>
+            <div>
+                <small>16-10-2026</small><br>
+                🆚
+            </div>
+            <div class="team">Ahnaf</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📅 More Fixtures</h2>
+        <p>Upcoming matches will be added here.</p>
+    </div>
+
+</section>
+
+
+<!-- MATCHES -->
+<section id="matches" class="section">
+
+    <div class="card">
+        <h2>⚽ Match Results</h2>
+
+        <div class="match">
+            <div class="team">Rahil</div>
+            <div class="score">7 - 3</div>
+            <div class="team">Ahnaf</div>
+        </div>
+
+        <br>
+
+        <p><strong>MOM:</strong> Az. Tahmid</p>
+        <p><strong>Best GK:</strong> Az. Rahil</p>
+    </div>
+
+    <div class="card">
+        <h2>Match History</h2>
+        <p>More completed matches will appear here.</p>
+    </div>
+
+</section>
+
+
+<!-- TABLE -->
+<section id="table" class="section">
+
+    <div class="card">
+        <h2>📊 Player Table</h2>
+
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>M</th>
+                <th>Match %</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>F. Farhan</td>
+                <td>17</td>
+                <td>10.30%</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>B. Tamim</td>
+                <td>16</td>
+                <td>9.70%</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Az. Rahil</td>
+                <td>16</td>
+                <td>9.70%</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Az. Tahmid</td>
+                <td>15</td>
+                <td>9.09%</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Mir Shanjid</td>
+                <td>14</td>
+                <td>8.48%</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>A. Ahnaf</td>
+                <td>14</td>
+                <td>8.48%</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>A. Rafi</td>
+                <td>14</td>
+                <td>8.48%</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>M. Fardin</td>
+                <td>13</td>
+                <td>7.88%</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>H. Siam</td>
+                <td>11</td>
+                <td>6.67%</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td>M. Tanzim</td>
+                <td>10</td>
+                <td>6.06%</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td>M. Tanvir</td>
+                <td>10</td>
+                <td>6.06%</td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td>M. Alif</td>
+                <td>9</td>
+                <td>5.45%</td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td>B. Avinandan</td>
+                <td>6</td>
+                <td>3.64%</td>
+            </tr>
+
+        </table>
+    </div>
+
+</section>
+
+
+<!-- PLAYERS -->
+<section id="players" class="section">
+
+    <div class="card">
+        <h2>👤 Players</h2>
+
+        <div class="player">
+            <strong>Az. Tahmid</strong>
+            <span>15 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>F. Farhan</strong>
+            <span>17 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>B. Tamim</strong>
+            <span>16 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>Mir Shanjid</strong>
+            <span>14 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>M. Tanzim</strong>
+            <span>10 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>H. Siam</strong>
+            <span>11 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>M. Fardin</strong>
+            <span>13 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>Az. Rahil</strong>
+            <span>16 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>M. Alif</strong>
+            <span>9 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>M. Tanvir</strong>
+            <span>10 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>B. Avinandan</strong>
+            <span>6 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>A. Ahnaf</strong>
+            <span>14 M</span>
+        </div>
+        <hr><br>
+
+        <div class="player">
+            <strong>A. Rafi</strong>
+            <span>14 M</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AWARDS -->
+<section id="awards" class="section">
+
+    <div class="card">
+        <h2>🏆 Awards</h2>
+
+        <p>🥇 <strong>Best Player:</strong> Az. Tahmid</p>
+        <br>
+        <p>🧤 <strong>Best GK:</strong> Az. Rahil</p>
+        <br>
+        <p>⚽ <strong>Top Scorer:</strong> To be updated</p>
+        <br>
+        <p>🎯 <strong>Top Assist:</strong> To be updated</p>
+        <br>
+        <p>⭐ <strong>Player of the Tournament:</strong> To be updated</p>
+    </div>
+
+</section>
+
+
+<!-- FRIENDLIES -->
+<section id="friendlies" class="section">
+
+    <div class="card">
+        <h2>🤝 Friendly Matches</h2>
+        <p>Friendly match records will be added here.</p>
+    </div>
+
+</section>
+
+</div>
+
+
+<footer>
+    © 2026 Weekly Tournament 2026<br>
+    Football • Friendship • Competition
+</footer>
+
+
+<script>
+function showSection(sectionId) {
+
+    let sections = document.querySelectorAll(".section");
+
+    sections.forEach(function(section) {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
